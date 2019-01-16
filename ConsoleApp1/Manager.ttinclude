@@ -23,7 +23,8 @@ class Manager {
         public String Name;
         public int Start, Length;
     }
-  
+	//输出目录
+    private readonly string FinalPath="entities";
     private Block currentBlock;
     private List<Block> files = new List<Block>();
     private Block footer = new Block();
@@ -65,7 +66,12 @@ class Manager {
             String headerText = template.ToString(header.Start, header.Length);
             String footerText = template.ToString(footer.Start, footer.Length);
             String outputPath = Path.GetDirectoryName(host.TemplateFile);
-			outputPath=Path.Combine(outputPath,"entities");
+			//修改输出目录
+			outputPath=Path.Combine(outputPath,FinalPath);
+			if(!Directory.Exists(outputPath))
+			{
+				Directory.CreateDirectory(outputPath);
+			}
             files.Reverse();
             foreach(Block block in files) {
                 String fileName = Path.Combine(outputPath, block.Name);

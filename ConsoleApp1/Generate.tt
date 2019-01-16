@@ -6,10 +6,10 @@
     bool serviceModel = false;
      
     // 数据库连接
-    var connectionString = @"Server=172.8.10.141;port=3306;database=siger;charset=utf8;uid=siger;password=Siger_123";
+    var connectionString = @"Server=172.8.10.141;port=3306;database=Mid;charset=utf8;uid=siger;password=Siger_123";
  
     // 需要解析的数据库
-    var database = new List<string> { "siger" };
+    var database = new List<string> { "Mid" };
  
     // 文件版权信息
     var copyright = DateTime.Now.Year + " xxxx Enterprises All Rights Reserved";
